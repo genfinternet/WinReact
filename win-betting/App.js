@@ -1,11 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Header from './components/Header'
+import LiveList from './components/LiveList'
+import StatusBarBackground from './components/StatusBarBackground'
 
 export default class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+          <StatusBarBackground style={{backgroundColor: 'black'}}/>
+          <Header style={styles.header}/>
+          <LiveList style={styles.liveList}/>
       </View>
     );
   }
@@ -14,8 +24,6 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    flexDirection: 'column'
+  }
 });
